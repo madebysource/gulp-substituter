@@ -31,7 +31,7 @@ gulp.task('replace', function() {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title><!-- replace:website --></title>
+  <title><!-- replace:title --></title>
 </head>
 <body>
 </body>
