@@ -1,6 +1,6 @@
 # gulp-substituter
 
-> Replace matched strings in files for predefined values
+> Replace matched strings in files for defined values
 
 ## Install
 
