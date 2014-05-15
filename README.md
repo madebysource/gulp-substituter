@@ -1,4 +1,7 @@
-# gulp-substituter
+# gulp-substituter [![Build Status][travis-image]][travis-url]
+
+[travis-url]: ttps://travis-ci.org/madebysource/gulp-substituter
+[travis-image]: https://secure.travis-ci.org/madebysource/gulp-substituter.png?branch=master
 
 > Replace matched strings in files for defined values
 
