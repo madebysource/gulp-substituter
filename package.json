@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Replace matched strings in files for defined values",
   "main": "index.js",
-  "author": "Jan Sedivy",
+  "author": "Jan Sedivy <jansedivy@abdoc.net>",
   "license": "MIT",
   "dependencies": {
     "async": "^0.8.0",
