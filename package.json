@@ -1,0 +1,17 @@
+{
+  "name": "gulp-substituter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "author": "Jan Sedivy",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^0.8.0",
+    "escape-regexp": "0.0.1",
+    "node.extend": "^1.0.10",
+    "through2": "^0.4.1"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  }
+}
