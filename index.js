@@ -13,7 +13,6 @@ var replacer = function(options) {
       return callback();
     }
 
-
     replace(file.contents.toString(), options, function(err, value) {
       if (err) {
         stream.emit('error', err);
