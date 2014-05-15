@@ -15,7 +15,7 @@ describe('replace', function() {
       title: 'hello'
     };
 
-    replace('<!-- replace:title -->', config, function(err, text) {
+    replace('<!-- substitute:title -->', config, function(err, text) {
       assert.equal(text, 'hello');
       done();
     });
@@ -27,7 +27,7 @@ describe('replace', function() {
       description: 'lorem'
     };
 
-    replace('<!-- replace:title --> <!-- replace:description -->', config, function(err, text) {
+    replace('<!-- substitute:title --> <!-- substitute:description -->', config, function(err, text) {
       assert.equal(text, 'hello lorem');
       done();
     });
@@ -38,7 +38,7 @@ describe('replace', function() {
       title: 'hello'
     };
 
-    replace('test: <!-- replace:nonexisting -->', config, function(err, text) {
+    replace('test: <!-- substitute:nonexisting -->', config, function(err, text) {
       assert.equal(text, 'test: ');
       done();
     });
@@ -51,7 +51,7 @@ describe('replace', function() {
       }
     };
 
-    replace('<!-- replace:value -->', config, function(err, text) {
+    replace('<!-- substitute:value -->', config, function(err, text) {
       assert.equal(text, '3');
       done();
     });
@@ -64,7 +64,7 @@ describe('replace', function() {
       value: 'hello'
     };
 
-    replace('{ replace:value }', config, function(err, text) {
+    replace('{ substitute:value }', config, function(err, text) {
       assert.equal(text, 'hello');
       done();
     });
@@ -87,7 +87,7 @@ describe('replace', function() {
       value: 'hello'
     };
 
-    replace('<!--replace:value   -->', config, function(err, text) {
+    replace('<!--substitute:value   -->', config, function(err, text) {
       assert.equal(text, 'hello');
       done();
     });
@@ -110,7 +110,7 @@ describe('replace', function() {
       'my-value': 'hello'
     };
 
-    replace('<!-- replace:my-value -->', config, function(err, text) {
+    replace('<!-- substitute:my-value -->', config, function(err, text) {
       assert.equal(text, 'hello');
       done();
     });
@@ -121,7 +121,7 @@ describe('replace', function() {
       value: fs.createReadStream(__dirname + '/fixtures/file.txt')
     };
 
-    replace('<!-- replace:value -->', config, function(err, text) {
+    replace('<!-- substitute:value -->', config, function(err, text) {
       assert.equal(text, 'file content\n');
       done();
     });
@@ -134,14 +134,14 @@ describe('replace', function() {
       }
     };
 
-    replace('<!-- replace:value -->', config, function(err, text) {
+    replace('<!-- substitute:value -->', config, function(err, text) {
       assert.equal(text, 'file content\n');
       done();
     });
   });
 
   it('doesn\'t replace __start __end __prefix values', function(done) {
-    replace('<!-- replace:__start --> <!-- replace:__end --> <!-- replace:__prefix -->', {}, function(err, text) {
+    replace('<!-- substitute:__start --> <!-- substitute:__end --> <!-- substitute:__prefix -->', {}, function(err, text) {
       assert.equal(text, '  ');
       done();
     });

@@ -10,7 +10,7 @@ describe('Substituter', function() {
 
     stream.write(new File({
       path: 'index.html',
-      contents: new Buffer('hello <!-- replace:key -->')
+      contents: new Buffer('hello <!-- substitute:key -->')
     }));
 
     stream.on('data', function(file) {

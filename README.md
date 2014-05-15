@@ -34,7 +34,7 @@ gulp.task('replace', function() {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title><!-- replace:title --></title>
+  <title><!-- substitute:title --></title>
 </head>
 <body>
 </body>
@@ -68,7 +68,7 @@ End tag for matching values
 ###### __prefix
 
 Type: `String`
-Default: `replace`
+Default: `substitute`
 
 prefix before key
 
