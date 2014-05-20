@@ -19,7 +19,6 @@ describe('Substituter', function() {
     });
 
     stream.on('end', done);
-
     stream.end();
   });
 });
