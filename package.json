@@ -12,6 +12,7 @@
   "dependencies": {
     "async": "^0.8.0",
     "escape-regexp": "0.0.1",
+    "gulp-util": "^2.2.14",
     "node.extend": "^1.0.10",
     "through2": "^0.4.1",
     "vinyl": "^0.2.3"

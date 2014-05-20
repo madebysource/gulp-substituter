@@ -1,5 +1,6 @@
 var through = require('through2');
 var replace = require('./lib/replace');
+var gutil = require('gulp-util');
 
 var replacer = function(options) {
   var stream = through.obj(function(file, enc, callback) {
@@ -9,13 +10,13 @@ var replacer = function(options) {
     }
 
     if (file.isStream()) {
-      stream.emit('error', 'Streaming not supported');
+      stream.emit('error', new gutil.PluginError('gulp-substituter', 'Streaming not supported'));
       return callback();
     }
 
     replace(file.contents.toString(), options, function(err, value) {
       if (err) {
-        stream.emit('error', err);
+        stream.emit('error', new gutil.PluginError('gulp-substituter', err));
         return callback();
       }
 
