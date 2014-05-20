@@ -116,18 +116,7 @@ describe('replace', function() {
     });
   });
 
-  it('takes streams as values', function(done) {
-    var config = {
-      value: fs.createReadStream(__dirname + '/fixtures/file.txt')
-    };
-
-    replace('<!-- substitute:value -->', config, function(err, text) {
-      assert.equal(text, 'file content\n');
-      done();
-    });
-  });
-
-  it('works with stream inside function', function(done) {
+  it('takes streams inside a function', function(done) {
     var config = {
       value: function() {
         return fs.createReadStream(__dirname + '/fixtures/file.txt');
