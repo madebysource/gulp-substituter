@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/madebysource/gulp-substituter"
   },
+  "keywords": ["gulpplugin"],
   "license": "MIT",
   "dependencies": {
     "async": "^0.8.0",
