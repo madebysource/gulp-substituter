@@ -135,4 +135,17 @@ describe('replace', function() {
       done();
     });
   });
+
+  it('replaces text recursively', function(done) {
+    var replaceObject = {
+      page: '<!-- substitute:header -->',
+      header: '<!-- substitute:title -->',
+      title: 'value'
+    };
+
+    replace('<!-- substitute:page -->', replaceObject, function(err, text) {
+      assert.equal(text, 'value');
+      done();
+    });
+  });
 });
