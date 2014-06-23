@@ -149,6 +149,22 @@ describe('replace', function() {
     });
   });
 
+  it('replaces text recursively for file streams', function(done) {
+    var replaceObject = {
+      page: function() {
+        return fs.createReadStream(__dirname + '/fixtures/recursive.txt');
+      },
+      title: function() {
+        return fs.createReadStream(__dirname + '/fixtures/file.txt');
+      }
+    };
+
+    replace('<!-- substitute:page -->', replaceObject, function(err, text) {
+      assert.equal(text, 'title: file content\n\n');
+      done();
+    });
+  });
+
   it('throws meaningful exception instead of throwing maximum call stack', function(done) {
     var replaceObject = {
       page: '<!-- substitute:header -->',
