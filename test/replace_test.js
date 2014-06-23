@@ -148,4 +148,17 @@ describe('replace', function() {
       done();
     });
   });
+
+  it('throws meaningful exception instead of throwing maximum call stack', function(done) {
+    var replaceObject = {
+      page: '<!-- substitute:header -->',
+      header: '<!-- substitute:header -->',
+      title: 'value'
+    };
+
+    replace('<!-- substitute:page -->', replaceObject, function(err) {
+      assert(err);
+      done();
+    });
+  });
 });
