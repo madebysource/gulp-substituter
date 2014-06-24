@@ -167,13 +167,12 @@ describe('replace', function() {
 
   it('throws meaningful exception instead of throwing maximum call stack', function(done) {
     var replaceObject = {
-      page: '<!-- substitute:header -->',
-      header: '<!-- substitute:header -->',
-      title: 'value'
+      page: '<!-- substitute:page -->',
     };
 
     replace('<!-- substitute:page -->', replaceObject, function(err) {
       assert(err);
+      assert.equal(err.message, 'Circular dependency detected for key "page"');
       done();
     });
   });
