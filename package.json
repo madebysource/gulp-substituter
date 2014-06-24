@@ -1,6 +1,6 @@
 {
   "name": "gulp-substituter",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Replace matched strings in files for defined values",
   "main": "index.js",
   "author": "Jan Sedivy <jansedivy@abdoc.net>",
