@@ -16,7 +16,7 @@ $ npm install --save-dev gulp-substituter
 ### gulpfile.js
 
 ```js
-var sprites = require('gulp-substituter');
+var substituter = require('gulp-substituter');
 
 gulp.task('replace', function() {
   return gulp.src('index.html')
